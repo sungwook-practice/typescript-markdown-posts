@@ -17,7 +17,18 @@ export function getSortedPostDataFromMarkDown() {
 
     return {
       fileId,
-      ...matterResult.data as { data: string; title: string}
+      ...matterResult.data as {
+        date: string;
+        title: string
+      }
     }
   });
+
+  return allPostData.sort((a, b) => {
+    if(a.date < b.date) {
+      return 1;
+    }else {
+      return -1;
+    }
+  })
 }
