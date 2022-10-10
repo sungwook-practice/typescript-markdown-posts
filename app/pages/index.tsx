@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { getSortedPostDataFromMarkDown } from '../lib/posts'
 import styles from '../styles/Home.module.css'
 
@@ -27,10 +28,12 @@ const Home = ({allPostData}: {
         <ul>
           {allPostData.map(({fileId, title, date}) =>
             <li key={fileId}>
-              <a>{title}</a>
+              <Link href={`/posts/${fileId}`}>
+                <a>{title}(클릭)</a>
+              </Link>
               <br />
               <small>
-                {date}
+                날짜: {date}
               </small>
             </li>
           )}
