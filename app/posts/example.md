@@ -1,6 +1,6 @@
 ---
-id: 1
-title: helloworld
+title: "helloworld"
+date: "2022-10-10"
 ---
 
 This is sample page!
